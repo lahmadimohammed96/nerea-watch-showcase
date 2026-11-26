@@ -85,7 +85,7 @@ footer p{color:var(--mut);font-family:Arial;font-size:12px;letter-spacing:.2em;m
 </nav>
 
 <header class="hero">
-  <div class="hero-poster" id="heroPoster"></div><video class="hero-bg" id="heroBg" autoplay muted loop playsinline preload="auto"><source src="hero.mp4" type="video/mp4"></video>
+  <div class="hero-poster" id="heroPoster"></div><video class="hero-bg" id="heroBg" autoplay muted loop playsinline preload="auto" poster="hero.webp"><source src="hero.mp4" type="video/mp4"></video>
   <div class="hero-shade"></div>
   <div class="hero-inner">
     <span class="eyebrow">Maison horlog&egrave;re alg&eacute;rienne</span>
@@ -219,6 +219,18 @@ document.querySelectorAll('.fav').forEach(b=>{
 // reveal on scroll
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');}),{threshold:.15});
 document.querySelectorAll('.reveal,.card').forEach(el=>{el.classList.add('reveal');io.observe(el);});
+</script>
+<script>
+(function(){
+  var v=document.getElementById('heroBg');
+  function tryPlay(){ if(v&&v.paused){ var p=v.play(); if(p&&p.catch)p.catch(function(){}); } }
+  document.addEventListener('DOMContentLoaded',tryPlay);
+  window.addEventListener('load',tryPlay);
+  document.addEventListener('click',tryPlay);
+  document.addEventListener('touchstart',tryPlay);
+  v.addEventListener('canplay',tryPlay);
+  setTimeout(tryPlay,800); setTimeout(tryPlay,2500);
+})();
 </script>
 </body>
 </html>
