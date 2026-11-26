@@ -18,7 +18,7 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:spac
 .sel b{color:var(--gold)}
 /* HERO */
 .hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;overflow:hidden}
-.hero-bg{position:absolute;inset:-6%;background:url(hero.webp) center/cover no-repeat;will-change:transform}
+.hero-bg{position:absolute;inset:-6%;width:106%;height:106%;object-fit:cover;will-change:transform}.hero-poster{position:absolute;inset:-6%;background:url(hero.webp) center/cover no-repeat;will-change:transform}
 .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,11,.88) 0%,rgba(10,10,11,.55) 45%,rgba(10,10,11,.15) 100%)}
 .hero-inner{position:relative;z-index:2;padding:0 6vw;max-width:760px}
 .hero h1{font-size:clamp(42px,7vw,96px);line-height:1.02;margin:18px 0 22px;font-weight:400}
@@ -85,7 +85,7 @@ footer p{color:var(--mut);font-family:Arial;font-size:12px;letter-spacing:.2em;m
 </nav>
 
 <header class="hero">
-  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-poster" id="heroPoster"></div><video class="hero-bg" id="heroBg" autoplay muted loop playsinline preload="auto"><source src="hero.mp4" type="video/mp4"></video>
   <div class="hero-shade"></div>
   <div class="hero-inner">
     <span class="eyebrow">Maison horlog&egrave;re alg&eacute;rienne</span>
